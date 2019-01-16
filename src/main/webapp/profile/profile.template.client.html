@@ -2,9 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Course Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link href="profile.style.client.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="container-fluid">
+    <a href="../index.html">
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </a>
+    <h1>Profile</h1>
+    <form>
+        <div class="form-group row">
+            <div class="col-12">
+                <p class="form-control" id="alertBox"> <b>Profile successfully saved</b> </p>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="username" class="col-sm-2 col-form-label">
+                Username </label>
+            <div class="col-sm-10">
+                <input class="form-control"
+                       id="username"
+                       placeholder="Alice" readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phone" class="col-sm-2 col-form-label">
+                Phone </label>
+            <div class="col-sm-10">
+                <input type="tel" class="form-control"
+                       id="phone" placeholder="(555) 123-4324)" data-country="US" >
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="emailField" class="col-sm-2 col-form-label">
+                Email </label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control"
+                       id="emailField" placeholder="alice@wonderland.com">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="roleSelector" class="col-sm-2 col-form-label">
+                Role </label>
+            <div class="col-sm-10">
+                <select class="form-control" id="=roleSelector">
+                    <option>Faculty</option>
+                    <option>Student</option>
+                    <option>Admin</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="dateOfB" class="col-sm-2 col-form-label">
+                Date of Birth </label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control"
+                       id="dateOfB" placeholder="mm/dd/yyyy">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="updateButton" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <button id="updateButton" class="btn btn-primary btn-block btn-success">Update</button>
+            </div>
+        </div>
+
+        <div class="form-group row">
+                <label for="logoutButton" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                     <button id="logoutButton" class="btn btn-primary btn-block btn-danger"><a id="homeLink" href="../index.html">Logout</a></button>
+                </div>
+        </div>
+    </form>
 
 </body>
 </html>
