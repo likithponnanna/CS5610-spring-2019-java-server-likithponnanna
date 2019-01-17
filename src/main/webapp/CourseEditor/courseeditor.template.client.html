@@ -1,10 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Course Manager</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="courseditor.style.client.css" type="text/css">
+    <link href=
+                  "https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#"><i id="wbdvCross" class="fa fa-times"></i>CS5610 - WebDev</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="#">Build </a>
+            </li>
+            <li class="nav-item wbdvCustBord active">
+                <a class="nav-link" href="#">Pages <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Themes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Apps</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+            </li>
+            <li class="nav-item">
+                <i id="wbdvTopPlus" class="fa fa-plus"></i>
+            </li>
+        </ul>
+    </div>
+    </div>
 
+
+</nav>
+
+<div class="container-fluid wbdvFull">
+    <div class="row">
+        <div class="col-2 bg-dark d-none d-sm-block" id="wbdvDarkBg">
+            <ul class="nav flex-column nav-pills">
+                <li class="row">
+                    <a class="nav-link  wbdv-SideCol col-7 wbdv-btn"  href="#">Module 1 - jQuery</a>
+                    <i class="fas fa-times col-1 wbdv-module-X"></i>
+                </li>
+                <li class="row">
+                <a class="nav-link active wbdv-SideCol col-7 wbdv-btn" id="wbdvAct" href="#">Module 2 - React</a>
+                <i class="fas fa-times col-1 wbdv-module-X"></i>
+                </li>
+                <li class="row">
+                    <a class="nav-link  wbdv-SideCol col-7 wbdv-btn"  href="#">Module 3 - Redux</a>
+                    <i class="fas fa-times col-1 wbdv-module-X"></i>
+                </li>
+                <li class="row">
+                    <a class="nav-link  wbdv-SideCol col-7 wbdv-btn"  href="#">Module 4 - Native</a>
+                    <i class="fas fa-times col-1 wbdv-module-X"></i>
+                </li>
+                <li class="row">
+                    <a class="nav-link  wbdv-SideCol col-7 wbdv-btn" href="#">MModule 5 - Angular</a>
+                    <i class="fas fa-times col-1 wbdv-module-X"></i>
+                </li>
+                <li class="row">
+                    <a class="nav-link  wbdv-SideCol col-7 wbdv-btn"  href="#">Module 6 - Node</a>
+                    <i class="fas fa-times col-1 wbdv-module-X"></i>
+                </li>
+                <li class="row">
+                    <a class="nav-link  wbdv-SideCol col-7 wbdv-btn"  href="#">Module 7 - Mongo</a>
+                    <i class="fas fa-times col-1 wbdv-module-X"></i>
+                </li>
+                <li class="row">
+                    <a class="nav-link col-8"></a>
+                    <i id="wbdvMainAdd" class="fas fa-plus col-1 wbdv-module-X"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <br />
+            <ul class="nav nav-pills">
+                <li class="nav-item wbdv-Topic-Bg-Color">
+                    <a class="nav-link wbdv-Topic-Color " href="#">Topic 1</a>
+                </li>
+                <li class="nav-item wbdv-Topic-Bg-Color">
+                    <a class="nav-link active wbdv-Topic-Color" id="activeBgTopic"
+                       href="#">Topic 2</a>
+                </li>
+                <li class="nav-item wbdv-Topic-Bg-Color">
+                    <a class="nav-link wbdv-Topic-Color" href="#">Topic 3</a>
+                </li>
+
+                <li class="nav-item wbdv-Topic-Bg-Color">
+                    <a class="nav-link wbdv-Topic-Color" href="#">Topic 4</a>
+                </li>
+
+                <li class="nav-item wbdv-Topic-Bg-Color">
+                    <a class="nav-link wbdv-Topic-Color" href="#"><i id="wbdvTopicPlus" class="fa fa-plus"></i></a>
+                </li>
+            </ul>
+
+            <div class="row" id="wbdvUpMargin">
+                <div class="col-6">
+                    <button class="btn btn-success float-right">Save</button>
+                </div>
+                <label class="float-right"><b class="wbdv-Mar">Preview </b></label>
+                <label class="switch float-right">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+
+            </div>
+
+            <div class="row border wbdv-margin-bord" >
+                <div class="form-group row">
+                    <h3 class="col-4"> Heading Widget</h3>
+                    <div class="col-8">
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                        <select id="wbdvDrpDwn">
+                            <option value="Heading"> Heading </option>
+                            <option value="Heading"> List </option>
+                            <option value="Heading"> Paragraph </option>
+                            <option value="Heading"> Image </option>
+                        </select>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form class="col-12">
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <input type="text" class="form-control"
+                                   id="wbdvHeadingTxt" placeholder="Heading Text">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-12">
+
+                            <select class="form-control">
+                                <option value="Heading"> Heading 1</option>
+                                <option value="Heading"> Heading 2 </option>
+                                <option value="Heading"> Heading 3 </option>
+                            </select>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <input type="text" class="form-control"
+                                   id="wbdvWidgetName" placeholder="Widget Name">
+                        </div>
+                    </div>
+
+                    <h4> Preview</h4>
+                    <h1> Heading Text</h1>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="row border wbdv-margin-bord" >
+                <div class="form-group row">
+                    <h3 class="col-4"> Paragraph Widget</h3>
+                    <div class="col-8">
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                        <select id="wbdvDrpDwn2">
+                            <option value="Paragraph"> Paragraph </option>
+                        <option value="Heading"> Heading </option>
+                        <option value="List"> List </option>
+                        <option value="Image"> Image </option>
+                         </select>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form class="col-12">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <textarea type="text" class="form-control"
+                                       id="wbdvHeadingTxt2"
+                                          placeholder="Heading Text"> Lorem Ipsum </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input type="text" class="form-control"
+                                       id="wbdvWidgetName2" placeholder="Widget Name">
+                            </div>
+                        </div>
+
+                        <h4> Preview</h4>
+                        <h6> Lorem Ipsum</h6>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="row border wbdv-margin-bord" >
+                <div class="form-group row">
+                    <h3 class="col-4"> List Widget</h3>
+                    <div class="col-8">
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                        <select id="wbdvDrpDwn3">
+                            <option value="List"> List </option>
+                            <option value="Paragraph"> Paragraph </option>
+                            <option value="Heading"> Heading </option>
+                            <option value="Image"> Image </option>
+                        </select>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form class="col-12">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <textarea type="text" class="form-control"
+                                          id="wbdvHeadingTxt3"
+                                          placeholder="Heading Text"> Put each &nbsp item in &nbsp a separate row
+                                </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+
+                                <select class="form-control">
+                                    <option value="Unordered List"> Unordered List </option>
+                                    <option value="Ordered List"> Ordered List </option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input type="text" class="form-control"
+                                       id="wbdvWidgetName3" placeholder="Widget Name">
+                            </div>
+                        </div>
+
+                        <h4> Preview</h4>
+                        <ul>
+                            <li> Put each </li>
+                            <li> Item in </li>
+                            <li> a separate row </li>
+                        </ul>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+            <div class="row border wbdv-margin-bord" >
+                <div class="form-group row">
+                    <h3 class="col-4"> Image Widget</h3>
+                    <div class="col-8">
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                        <select id="wbdvDrpDwn4">
+                            <option value="Image"> Image </option>
+                            <option value="List"> List </option>
+                            <option value="Paragraph"> Paragraph </option>
+                            <option value="Heading"> Heading </option>
+                        </select>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form class="col-12">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input type="text" class="form-control"
+                                          id="wbdvHeadingTxt4"
+                                          placeholder="http://lorempixel.com/300/150/">
+                                </input>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+
+                                <select class="form-control">
+                                    <option value="Unordered List"> Unordered List </option>
+                                    <option value="Ordered List"> Ordered List </option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input type="text" class="form-control"
+                                       id="wbdvWidgetName4" placeholder="Widget Name">
+                            </div>
+                        </div>
+
+                        <h4> Preview</h4>
+                        <img src="http://lorempixel.com/300/150/">
+                    </form>
+
+                </div>
+
+
+            </div>
+
+            <div class="row  wbdv-margin-bord" >
+                <div class="col-10">
+                </div>
+                <button class="btn btn-danger float-right col-2" id="wbdvLast">
+                    <i class="fas fa-plus"></i> </button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
 </body>
 </html>

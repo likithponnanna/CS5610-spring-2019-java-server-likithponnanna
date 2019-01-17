@@ -1,0 +1,165 @@
+#wbdvCross{
+    margin-right: 4px;
+    padding: 4px;
+    color: white;
+}
+
+#wbdvTopPlus{
+    color: #FFFFFF;
+    margin: auto;
+    padding: auto;
+    align-self: center;
+    align-content: center;
+    margin-top: 0.6em;
+    float: right;
+}
+
+@media (min-width: 1px) and (max-width: 600px) {
+    .collapse {
+        display: none !important;
+    }
+}
+
+.wbdvCustBord{
+    border: #383c3f;
+    background: #0a0406;
+    border-radius: 5px;
+}
+
+#wbdvDarkBg{
+    background: #373b3e;
+    height: 100%;
+    padding-bottom: 100%;
+}
+
+.wbdvFull{
+    overflow: hidden;
+}
+
+.wbdv-SideCol{
+    color: #FFFFFF;
+}
+
+div#wbdvDarkBg.col-2.bg-dark{
+    background: #0a0406;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    overflow: hidden;
+}
+
+#wbdvAct{
+    background: #4790e3
+}
+
+#wbdvTopicPlus{
+    color: #FFFFFF;
+}
+
+.wbdv-Topic-Bg-Color{
+    background: #7a7a7a;
+    margin-right: 0.5em;
+    color: #FFFFFF;
+}
+
+.wbdv-Topic-Color{
+    color: white;
+}
+
+#activeBgTopic{
+    background: #444444;
+}
+
+.wbdv-x-pad{
+    margin-left: 1em;
+
+}
+
+.wbdv-module-X{
+    color: #FFFFFF;
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+.wbdv-btn{
+    margin-left: 1em;
+    margin-right: 0;
+}
+
+.wbdv-margin-bord{
+    margin: 1em;
+    padding: 1em;
+;
+}
+
+/* This was taken W3 Schools (Providing reference as asked by professor*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.wbdv-Mar{
+    margin-top: 2em;
+    margin-right: 1em;
+}
+
+#wbdvUpMargin{
+    margin-top: 1em;
+}
+
