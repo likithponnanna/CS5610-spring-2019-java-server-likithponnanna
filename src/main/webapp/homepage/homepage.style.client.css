@@ -1,0 +1,129 @@
+body{
+    background: lightgrey ;
+}
+.container-fluid{
+    padding: 0;
+}
+
+.wbdv-bg-blue{
+    background-color: #5087ed;
+    background: #5087ed;
+}
+
+.wbdv-bottom-right{
+    color: red; position: fixed;
+    right: 10px;}
+
+
+#custFloat{
+    width:2em;
+    height:2em;
+    background-color: #cb4f40;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: #999;
+}
+
+.my-float{
+    margin-top:0.5em;
+}
+#lineId{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 0.2em;
+}
+
+#topRow{
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+    margin-left: 1em;
+    margin-right: 1em;
+
+}
+
+#wbdvNav{
+    color: #FFFFFF;
+}
+
+.wbdv-icon-corner{
+    align-content: center;
+    margin-left: 1em;
+}
+
+.wbdv-small-line{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+    border-width: 1px;
+}
+
+@media (max-width: 450px) {
+
+
+
+
+    #wbdvCourseHid{
+        display: none;
+    }
+
+    .center-Cont{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom:0;
+        padding:0;
+        background-color: #FFFFFF;
+    }
+
+    .wbdv-space-custom{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        padding:0;
+    }
+}
+
+.center-Cont{
+    margin-left: 1em;
+    margin-right: 1em;
+    padding:0;
+    background-color: #FFFFFF;
+}
+
+.wbdv-space-custom{
+    margin-left: 1em;
+    margin-right: 1em;
+    padding:0;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+.wbdv-grey-font{
+    color: gray;
+}
+
+#wbdvCustWrap {
+    overflow: hidden;
+}
+#wbdvFirst {
+    width: auto;
+    float:left;
+}
+#wbdvSecond {;
+    overflow: hidden;
+    margin: 0;
+
+}
+
+#wbdvRound{
+    color: #FFFFFF;
+    border-radius: 80%;
+}
+button#wbdvRound{
+    background: red;
+}
