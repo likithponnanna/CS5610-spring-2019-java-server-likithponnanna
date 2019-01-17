@@ -1,88 +1,86 @@
 <html>
 <head>
     <title>Course Manager</title>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="homepage.style.client.css" type="text/css">
-    <link href=
-                  "https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
           crossorigin="anonymous">
-    </head>
-    <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light wbdv-bg-blue justify-content-between ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="hidden-sm-down" id="wbdvCourseHid">
-                <a class="navbar-brand form-inline d-sm-block d-xs-block d-xs-block col-md-0 " id="wbdvNav" href="#">Course Manager</a>
-            </div>
-            <form class="form-inline my-2 my-lg-0" >
-                <div id="wbdvCustWrap">
-                    <div id="wbdvFirst">
-                        <input class="form-control form-inline mr-sm-2" type="search" placeholder="New Course Title"
-                               aria-label="Search">
-                    </div>
-                    <div id="wbdvSecond">
-                        <button class="btn btn-primary" type="button" id="wbdvRound">
-                            <i class="fa fa-plus "></i>
-                        </button>
-                    </div>
-                 </div>
-            </form>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            </div>
-        </nav>
-
-        <div class="row" id="topRow">
-            <div class="col-6 pl-5">
-                <b>Title</b>
-            </div>
-            <div class="col-2 d-none d-sm-block">
-                <b>Owner</b>
-            </div>
-            <div class="col-2">
-                <b>Last modified by me</b>
-            </div>
-            <div class="col-1">
-                <i class="fa fa-th my-float"></i>
-                <i class="fa fa-sort-alpha-down my-float"></i>
-            </div>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary justify-content-between row">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="hidden-sm-down ml-1" id="wbdvCourseHid">
+            <a class="navbar-brand form-inline  m-sm-2" id="wbdvNav" href="#">Course Manager</a>
         </div>
-        <hr id="lineId">
-
-        <div class="row">
-            <div class="col-1 d-sm-block">
-
-            </div>
-            <div class="col-10 col-sm-12 col-xs-12">
-                <div class="row center-Cont" id="centerCont">
-                    <div class="col-6 pl-5">
-                        <i class="fa fa-file-alt my-float"></i>
-                        <b>CS5500 Software Engineering Graduate</b>
-                    </div>
-                    <div class="col-2 d-none d-sm-block">
-                        me
-                    </div>
-                    <div class="col-2">
-                        6:45 PM
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa-times my-float wbdv-icon-corner"></i>
-                    </div>
+        <form class="form-inline ml-xl-5 align-content-center pl-lg-5 pr-lg-5 pl-xl-5 pr-xl-5  my-2  float-right btn-group " >
+            <div id="wbdvCustWrap" class="input-group ">
+                <div id="wbdvFirst" class="input-group-prepend">
+                    <input class="form-control form-inline mr-sm-2" type="search" placeholder="New Course Title"
+                           aria-label="Search">
                 </div>
+                <div id="wbdvSecond" class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="wbdvRound">
+                        <i class="fa fa-plus "></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                 <hr class="wbdv-small-line">
+        </div>
+    </nav>
 
-                <div class="row center-Cont">
+    <div class="row wbdv-word-break" id="topRow">
+        <div class="col-6 pl-5 wbdv-word-break ">
+            <b>Title</b>
+        </div>
+        <div class="col-2 d-none d-sm-block wbdv-word-break">
+            <b>Owner</b>
+        </div>
+        <div class="col-2 wbdv-word-break">
+            <b>Last modified by me</b>
+        </div>
+        <div class="col-1 wbdv-word-break">
+            <i class="fa fa-th my-float"></i>
+            <i class="fa fa-sort-alpha-down my-float"></i>
+        </div>
+    </div>
+    <hr id="lineIdFld">
+
+    <div class="row ">
+        <div class="col-1 d-none d-sm-block ">
+
+        </div>
+        <div class="col-12">
+            <div class="row wbdv-center-cont pt-2 pb-2" id="centerCont">
                 <div class="col-6 pl-5">
-                    <i class="fa fa-file-alt my-float"></i>
-                    <b>CS4550 Software Engineering Undergraduate</b>
+                    <i class="fa fa-file-alt my-float wbdv-icon-blue"></i>
+                    <a class="wbdv-word-break" href="../CourseEditor/courseeditor.template.client.html">CS5500 Software Engineering Graduate</a>
+                </div>
+                <div class="col-2 d-none d-sm-block">
+                    me
+                </div>
+                <div class="col-2">
+                    6:45 PM
+                </div>
+                <div class="col-1">
+                    <i class="fa fa-times my-float wbdv-icon-corner"></i>
+                </div>
+            </div>
+
+            <hr class="wbdv-small-line">
+
+            <div class="row wbdv-center-cont pt-2 pb-2">
+                <div class="col-6 pl-5">
+                    <i class="fa fa-file-alt my-float wbdv-icon-blue"></i>
+                    <a class="wbdv-word-break" href="../CourseEditor/courseeditor.template.client.html">CS4550 Software Engineering Undergraduate</a>
                 </div>
                 <div class="col-2 d-none d-sm-block">
                     me
@@ -93,63 +91,63 @@
                 <div class="col-1">
                     <i class="fa fa-times my-float wbdv-icon-corner"></i>
                 </div>
-                </div>
-
-                <hr class="wbdv-small-line">
-
-                <div class="row center-Cont">
-                    <div class="col-6 pl-5">
-                        <i class="fa fa-file-alt my-float"></i>
-                        <b>CS4500 WebDev Undergraduate</b>
-                    </div>
-                    <div class="col-2 d-none d-sm-block">
-                        me
-                    </div>
-                    <div class="col-2">
-                        6:44 PM
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa-times my-float wbdv-icon-corner"></i>
-                    </div>
-                </div>
-
-                <hr class="wbdv-small-line">
-
-                <div class="row center-Cont">
-                    <div class="col-6 pl-5">
-                        <i class="fa fa-file-alt my-float"></i>
-                        <b>CS5200 Intro to Database</b>
-                    </div>
-                    <div class="col-2 d-none d-sm-block">
-                        me
-                    </div>
-                    <div class="col-2">
-                        6:41 PM
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa-times my-float wbdv-icon-corner"></i>
-                    </div>
-                </div>
             </div>
-            <div class="col-1 d-sm-block">
 
-            </div>
-        </div>
+            <hr class="wbdv-small-line">
 
-        <div class="row wbdv-space-custom">
-            <p class="wbdv-grey-font"> <b>Yesterday</b></p>
-
-        </div>
-
-        <div class="row">
-            <div class="col-1 d-sm-block">
-
-            </div>
-            <div class="col-10 col-sm-12 col-xs-12">
-                <div class="row center-Cont">
+            <div class="row wbdv-center-cont pt-2 pb-2">
                 <div class="col-6 pl-5">
-                    <i class="fa fa-file-alt my-float"></i>
-                    <b>CS5200 Intro to Database</b>
+                    <i class="fa fa-file-alt my-float wbdv-icon-blue"></i>
+                    <a class="wbdv-word-break" href="../CourseEditor/courseeditor.template.client.html"> CS4500 WebDev Undergraduate</a>
+                </div>
+                <div class="col-2 d-none d-sm-block">
+                    me
+                </div>
+                <div class="col-2">
+                    6:44 PM
+                </div>
+                <div class="col-1">
+                    <i class="fa fa-times my-float wbdv-icon-corner"></i>
+                </div>
+            </div>
+
+            <hr class="wbdv-small-line">
+
+            <div class="row wbdv-center-cont pt-2 pb-2">
+                <div class="col-6 pl-5">
+                    <i class="fa fa-file-alt my-float wbdv-icon-blue"></i>
+                    <a class="wbdv-word-break" href="../CourseEditor/courseeditor.template.client.html">CS5200 Intro to Database</a>
+                </div>
+                <div class="col-2 d-none d-sm-block">
+                    me
+                </div>
+                <div class="col-2">
+                    6:41 PM
+                </div>
+                <div class="col-1">
+                    <i class="fa fa-times my-float wbdv-icon-corner"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+
+        </div>
+    </div>
+
+    <div class="row wbdv-space-custom">
+        <p class="wbdv-grey-font"> <b>Yesterday</b></p>
+
+    </div>
+
+    <div class="row">
+        <div class="col-1 d-sm-block">
+
+        </div>
+        <div class="col-12">
+            <div class="row wbdv-center-cont pt-2 pb-2">
+                <div class="col-6 pl-5">
+                    <i class="fa fa-file-alt my-float wbdv-icon-blue"></i>
+                    <a class="wbdv-word-break" href="../CourseEditor/courseeditor.template.client.html">CS5200 Intro to Database</a>
                 </div>
                 <div class="col-2 d-none d-sm-block">
                     me
@@ -160,46 +158,30 @@
                 <div class="col-1">
                     <i class="fa fa-times my-float wbdv-icon-corner"></i>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div class="col-1 d-sm-block">
-
-            </div>
+        <div class="col-1 d-sm-block">
 
         </div>
 
-        <div class="row wbdv-space-custom">
-            <p class="wbdv-grey-font"> <b>Previous 7 days</b></p>
+    </div>
+
+    <div class="row wbdv-space-custom">
+        <p class="wbdv-grey-font"> <b>Previous 7 days</b></p>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-1 d-sm-block">
 
         </div>
-
-
-        <div class="row">
-            <div class="col-1 d-sm-block">
-
-            </div>
-            <div class="col-10 col-sm-12 col-xs-12">
-                <div class="row center-Cont">
-                    <div class="col-6 pl-5">
-                        <i class="fa fa-file-alt my-float"></i>
-                        <b>Web Dev Syllabus</b>
-                    </div>
-                    <div class="col-2 d-none d-sm-block">
-                        me
-                    </div>
-                    <div class="col-2">
-                        May 3,2018 PM
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa-times my-float wbdv-icon-corner"></i>
-                    </div>
-                </div>
-
-                <div class="row center-Cont">
+        <div class="col-12">
+            <div class="row wbdv-center-cont pt-2 pb-2">
                 <div class="col-6 pl-5">
-                    <i class="fa fa-file-alt my-float"></i>
-                    <b>Database</b>
+                    <i class="fa fa-file-alt my-float wbdv-icon-blue"></i>
+                    <a class="wbdv-word-break" href="../CourseEditor/courseeditor.template.client.html">Web Dev Syllabus</a>
                 </div>
                 <div class="col-2 d-none d-sm-block">
                     me
@@ -211,18 +193,30 @@
                     <i class="fa fa-times my-float wbdv-icon-corner"></i>
                 </div>
             </div>
-            </div>
-            <div class="col-1 d-sm-block">
+            <hr class="wbdv-small-line">
 
+            <div class="row wbdv-center-cont pt-2 pb-2">
+                <div class="col-6 pl-5">
+                    <i class="fa fa-file-alt my-float wbdv-icon-blue"></i>
+                    <a class="wbdv-word-break" href="../CourseEditor/courseeditor.template.client.html">Database</a>
+                </div>
+                <div class="col-2 d-none d-sm-block">
+                    me
+                </div>
+                <div class="col-2">
+                    May 3,2018 PM
+                </div>
+                <div class="col-1">
+                    <i class="fa fa-times my-float wbdv-icon-corner"></i>
+                </div>
             </div>
         </div>
+        <div class="col-1 d-sm-block">
 
-        <div class="fixed-action-btn" id="wbdvEnd">
-            <button class="btn-floating">
-                <i class="fa fa-plus"></i>
-            </button>
         </div>
-
     </div>
-    </body>
-    </html>
+
+
+</div>
+</body>
+</html>

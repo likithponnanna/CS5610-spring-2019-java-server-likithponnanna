@@ -1,5 +1,6 @@
 body{
-    background: lightgrey ;
+    background: #ededed;
+    min-width: 300px;
 }
 .container-fluid{
     padding: 0;
@@ -8,6 +9,16 @@ body{
 .wbdv-bg-blue{
     background-color: #5087ed;
     background: #5087ed;
+}
+
+.wbdv-word-break{
+    word-wrap: break-word;
+}
+
+.wbdv-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .wbdv-bottom-right{
@@ -28,7 +39,7 @@ body{
 .my-float{
     margin-top:0.5em;
 }
-#lineId{
+#lineIdFld{
     display: block;
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -43,6 +54,10 @@ body{
     margin-left: 1em;
     margin-right: 1em;
 
+}
+
+.wbdv-icon-blue{
+    color: #378bd8;
 }
 
 #wbdvNav{
@@ -62,7 +77,7 @@ body{
     border-width: 1px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
 
 
 
@@ -71,13 +86,6 @@ body{
         display: none;
     }
 
-    .center-Cont{
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom:0;
-        padding:0;
-        background-color: #FFFFFF;
-    }
 
     .wbdv-space-custom{
         margin-left: 0;
@@ -86,9 +94,16 @@ body{
         margin-bottom: 4px;
         padding:0;
     }
+
+    .wbdv-center-cont{
+        margin-left: 1px;
+        margin-right: 1px;
+        padding:0;
+        background-color: #FFFFFF;
+    }
 }
 
-.center-Cont{
+.wbdv-center-cont{
     margin-left: 1em;
     margin-right: 1em;
     padding:0;
