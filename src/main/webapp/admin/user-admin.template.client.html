@@ -14,6 +14,11 @@
     <script src="user-admin.component.client.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-light bg-dark">
+    <span id="headerFld" class="navbar-brand mb-0 h1">
+        <h1 id="headerFontFld">User Admin</h1>
+    </span>
+</nav>
 <table class="table">
     <thead>
     <tr>
@@ -40,9 +45,9 @@
             <option value="ADMIN">Admin</option>
         </select></td>
         <td><span class="float-right" style="white-space: nowrap">
-      <i class="fa-2x fa fa-search wbdv-search"></i> <i
-                class="fa-2x fa fa-plus wbdv-create"></i> <i
-                class="fa-2x fa fa-check wbdv-update"></i>
+      <i class="fa-2x fa fa-search wbdv-search" id="searchBtnFld"></i> <i
+                class="fa-2x fa fa-plus wbdv-create"  id="createBtnFld"></i> <i
+                class="fa-2x fa fa-check wbdv-update" id="updateBtnFld"></i>
   </span></td>
     </tr>
     <tbody class="wbdv-tbody">
