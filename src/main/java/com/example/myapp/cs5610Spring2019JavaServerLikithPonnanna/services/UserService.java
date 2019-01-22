@@ -1,8 +1,10 @@
 package com.example.myapp.cs5610Spring2019JavaServerLikithPonnanna.services;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,13 +41,17 @@ public class UserService {
     return user;
   }
 
-  @PostMapping("/api/user/")
-  public void deleteUser(@RequestBody User user){
-    users.remove(user);
+  @DeleteMapping("/api/user/{userId}")
+  public void deleteUser(@PathVariable("userId") Integer id){
+    for (User u: users) {
+      if (u.getUserId().equals(id)){
+        users.remove(u);
+      }
+    }
   }
 
-  @PostMapping("/api/user/")
-  public User updateUser(@RequestBody Integer id,@RequestBody User user){
+  @PutMapping("/api/user/{userId}")
+  public User updateUser(@PathVariable("userId") Integer id,@RequestBody User user){
     for (User u: users) {
       if (u.getUserId().equals(id)){
         if (user.getPassword() != null) {
