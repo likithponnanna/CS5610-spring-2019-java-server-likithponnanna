@@ -12,12 +12,13 @@ import com.example.myapp.cs5610Spring2019JavaServerLikithPonnanna.model.User;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 @RestController
 public class UserService {
 
-  private User alice = new User(123, "alice", "Alice", "Wonderland");
-  private User bob = new User(234, "bob", "Bob", "Marley");
+  private User alice = new User(123, "alice","pass123", "Alice", "Wonderland","FACULTY");
+  private User bob = new User(234, "bob","pass245", "Bob", "Marley","STUDENT");
   private ArrayList<User> users = new ArrayList <>(Arrays.asList(alice,bob));
 
   @GetMapping("/api/user")
@@ -66,6 +67,10 @@ public class UserService {
         if (user.getUsername() != null) {
           u.setUsername(user.getUsername());
         }
+        if (user.getRole() != null) {
+          u.setRole(user.getRole());
+        }
+
 
         return u;
       }
