@@ -8,9 +8,20 @@ function AdminUserServiceClient() {
     this.url = 'http://localhost:8080/api/user';
     var self = this;
     function createUser(user) {
+        console.log(user.getUserId().toString());
+        console.log(user.getUsername().toString());
+        console.log(user.getPassword().toString());
+        console.log(user.getFirstName().toString());
+        console.log(user.getLastName().toString());
+        console.log(user.getRole().toString());
             return fetch(this.url, {
                 method: 'post',
-                body: JSON.stringify(user),
+                body: JSON.stringify({userId: user.getUserId().toString()
+                                                     , username: user.getUsername().toString()
+                                                     , password: user.getPassword().toString()
+                                                     ,firstName: user.getFirstName().toString()
+                                                     ,lastName: user.getLastName().toString()
+                                                     , role: user.getRole().toString()}),
                 headers: {
                     'content-type': 'application/json'
                 }

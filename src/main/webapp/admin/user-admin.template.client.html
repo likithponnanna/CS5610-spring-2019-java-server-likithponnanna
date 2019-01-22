@@ -10,6 +10,7 @@
     <link href="user-admin.style.client.css" rel="stylesheet" />
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../models/user.model.client.js"></script>
     <script src="../services/user.service.client.js"></script>
     <script src="user-admin.component.client.js"></script>
 </head>
@@ -32,14 +33,14 @@
 
     <tr class="wbdv-form">
         <td><input id="usernameFld" class="form-control"
-                   placeholder="Username" /></td>
+                   placeholder="Username" required="required"/></td>
         <td><input id="passwordFld" class="form-control"
-                   placeholder="Password" type="password" /></td>
+                   placeholder="Password" type="password" required="required"/></td>
         <td><input id="firstNameFld" class="form-control"
-                   placeholder="First Name" /></td>
+                   placeholder="First Name" required="required"/></td>
         <td><input id="lastNameFld" class="form-control"
                    placeholder="Last Name" /></td>
-        <td><select id="roleFld" class="form-control">
+        <td><select id="roleFld" class="form-control" required="required">
             <option value="FACULTY">Faculty</option>
             <option value="STUDENT">Student</option>
             <option value="ADMIN">Admin</option>
@@ -54,7 +55,7 @@
     <tbody class="wbdv-tbody">
     <tr id="intiTemplateFld" class="wbdv-template wbdv-user wbdv-hidden">
         <td class="wbdv-username">ada</td>
-        <td>&nbsp;</td>
+        <td class="wbdv-password">&nbsp;</td>
         <td class="wbdv-first-name">Ada</td>
         <td class="wbdv-last-name">Lovelace</td>
         <td class="wbdv-role">FACULTY</td>
