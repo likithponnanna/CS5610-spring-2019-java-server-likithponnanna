@@ -6,6 +6,7 @@
     var $intiTemplateFld;
     var $wbdvrmtrFld;
     var username, password, firstName, lastName, role;
+    var  $updateBtnFld, userIdTem=null;
     var userService = new AdminUserServiceClient();
     $(main);
 
@@ -21,6 +22,7 @@
         $firstNameFld = $("#firstNameFld");
         $lastNameFld = $("#lastNameFld");
         $roleFld = $("#roleFld");
+        $updateBtnFld = $('#updateBtnFld');
 
         userService
             .findAllUsers()
@@ -28,13 +30,14 @@
 
         $(document).on("click","#createBtnFld",createUser);
         $(document).on("click",".wbdv-remove",deleteUser);
-        $(document).on("click",".wbdv-edit",updateUser);
+        $(document).on("click",".wbdv-edit",editUser);
+        $(document).on("click","#updateBtnFld",updateUser);
 
-        $(document).on("click","#updateBtnFld",(function() {
 
-            console.log('i m jquery click')
-
-        }));
+       /* $(document).on("click","#updateBtnFld",(function() {
+            alert('No user chosen for update!! Click on the edit button of the user info to '
+                  + 'be updated');
+        }));*/
 
     }
     function createUser() {
@@ -83,9 +86,65 @@
 
     }
     function selectUser() {  }
-    function updateUser() {
-        
 
+    function updateUser() {
+        if(userIdTem!==0) {
+            username = $usernameFld.val();
+            password = $passwordFld.val();
+            firstName = $firstNameFld.val();
+            lastName = $lastNameFld.val();
+            role = $roleFld.val();
+
+            console.log(username+password+firstName+lastName+role);
+
+            var user = new User(username,password,firstName,lastName,role);
+           console.log(userIdTem);
+
+           var userId = userIdTem;
+
+            userService
+                .updateUser(userId,user)
+                .then(renderUsers);
+
+            $('.wbdv-rm-row-'+userId).find('.wbdv-username').text(username);
+            $('.wbdv-rm-row-'+userId).find('.wbdv-password').text('••••••');
+            $('.wbdv-rm-row-'+userId).find('.wbdv-first-name').text(firstName);
+            $('.wbdv-rm-row-'+userId).find('.wbdv-last-name').text(lastName);
+            $('.wbdv-rm-row-'+userId).find('.wbdv-role').text(role);
+
+            $usernameFld.val('');
+            $passwordFld.val('');
+            $firstNameFld.val('');
+            $lastNameFld.val('');
+            $roleFld.val('');
+
+            userIdTem=null;
+
+
+        }else {
+            alert('No user chosen for update!! Click on the edit button of the user info to '
+                  + 'be updated');
+        }
+
+
+    }
+
+    function editUser() {
+
+        var userId = event.target.id;
+        userId = userId.replace("wbdv-ed-","");
+
+        userService
+            .findUserById(userId).then(function (userPromiseData) {
+            $usernameFld.val(userPromiseData.username);
+            $passwordFld.val(userPromiseData.password);
+            $firstNameFld.val(userPromiseData.firstName);
+            $lastNameFld.val(userPromiseData.lastName);
+            $roleFld.val(userPromiseData.role); });
+
+        $("#usernameFld").focus();
+
+        userIdTem=userId;
 
     }
 

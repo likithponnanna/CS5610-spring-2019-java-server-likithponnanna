@@ -77,4 +77,10 @@ public class UserService {
     }
     return null;
   }
+
+  @GetMapping("/api/search")
+  public ArrayList<User> searcgUsers(){
+    return users;
+  }
+
 }
