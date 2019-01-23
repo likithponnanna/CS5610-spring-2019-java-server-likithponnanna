@@ -27,10 +27,10 @@ public class UserService {
   }
 
   @GetMapping("/api/user/{userId}")
-  public User findUserById(@PathVariable("userId") Integer id){
-    for (User user: users){
-      if(id.equals(user.getUserId())){
-        return user;
+  public User findUserById(@PathVariable("userId") Long id){
+    for (int i=0;i< users.size();i++){
+      if(id.equals(users.get(i).getUserId())){
+        return users.get(i);
       }
     }
     return null;
@@ -42,37 +42,37 @@ public class UserService {
     return user;
   }
 
-  @DeleteMapping("/api/user/{userId}")
-  public void deleteUser(@PathVariable("userId") Integer id){
-    for (User u: users) {
-      if (u.getUserId().equals(id)){
-        users.remove(u);
+  @DeleteMapping("/api/delete/{userId}")
+  public void deleteUser(@PathVariable("userId") Long id){
+    for (int i = 0; i < users.size(); i++) {
+      if (users.get(i).getUserId().equals(id)){
+        users.remove(i);
       }
     }
   }
 
-  @PutMapping("/api/user/{userId}")
-  public User updateUser(@PathVariable("userId") Integer id,@RequestBody User user){
-    for (User u: users) {
-      if (u.getUserId().equals(id)){
+  @PutMapping("/api/update/{userId}")
+  public User updateUser(@PathVariable("userId") Long id,@RequestBody User user){
+    for (int i=0;i<= users.size();i++) {
+      if (users.get(i).getUserId().equals(id)){
         if (user.getPassword() != null) {
-          u.setPassword(user.getPassword());
+          users.get(i).setPassword(user.getPassword());
         }
         if (user.getFirstName() != null) {
-          u.setFirstName(user.getFirstName());
+          users.get(i).setFirstName(user.getFirstName());
         }
         if (user.getLastName() != null) {
-          u.setLastName(user.getLastName());
+          users.get(i).setLastName(user.getLastName());
         }
         if (user.getUsername() != null) {
-          u.setUsername(user.getUsername());
+          users.get(i).setUsername(user.getUsername());
         }
         if (user.getRole() != null) {
-          u.setRole(user.getRole());
+          users.get(i).setRole(user.getRole());
         }
 
 
-        return u;
+        return users.get(i);
       }
     }
     return null;
