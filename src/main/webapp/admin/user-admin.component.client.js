@@ -268,6 +268,8 @@
             clone.find(".wbdv-first-name").html(users[u].firstName);
             clone.find(".wbdv-last-name").html(users[u].lastName);
             clone.find(".wbdv-role").html(role);
+            clone.find(".wbdv-remove").attr("id","wbdv-rm-"+ userId);
+            clone.find(".wbdv-edit").attr("id","wbdv-ed-"+userId);
             $tbody.append(clone).show();
 
         }
