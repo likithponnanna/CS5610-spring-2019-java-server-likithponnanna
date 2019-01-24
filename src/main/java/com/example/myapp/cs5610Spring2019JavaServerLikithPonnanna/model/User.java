@@ -1,12 +1,26 @@
 package com.example.myapp.cs5610Spring2019JavaServerLikithPonnanna.model;
 
-public class User{
+public class User {
   private Long userId;
   private String username;
   private String password;
   private String firstName;
   private String lastName;
   private String role;
+
+  public User() {
+
+  }
+
+  public User(Long userId, String username, String password, String firstName, String lastName
+          , String role) {
+    this.userId = userId;
+    this.username = username;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.password = password;
+    this.role = role;
+  }
 
   @Override
   public String toString() {
@@ -18,18 +32,6 @@ public class User{
             ", lastName='" + lastName + '\'' +
             ", role='" + role + '\'' +
             '}';
-  }
-
-  public User(){
-
-  }
-  public User(Long userId, String username,String password, String firstName, String lastName, String role) {
-    this.userId = userId;
-    this.username = username;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.password = password;
-    this.role =role;
   }
 
   public Long getUserId() {
@@ -73,8 +75,8 @@ public class User{
   }
 
   public String getRole() {
-    if(role==null){
-      role ="";
+    if (role == null) {
+      role = "";
     }
     return role;
   }
