@@ -212,7 +212,43 @@
     }
 
     function searchUsers() {
-       
+        username = $usernameFld.val();
+        password = $passwordFld.val();
+        firstName = $firstNameFld.val();
+        lastName = $lastNameFld.val();
+
+        role =$("#roleFld option:selected").val();
+        if(role === null){
+            role="";
+        }
+        console.log(role);
+
+        var user = new User(username,password,firstName,lastName,role);
+
+        userService
+            .searchUsers(user)
+            .then(function (userPromiseData) {
+                console.log(userPromiseData);
+                $tbody.empty();
+                searchRenderUsers(userPromiseData);
+                });
+
+    }
+
+    function searchRenderUsers(users) {
+        console.log(users)
+        for( var u=0; u < users.length; u++){
+            var clone = $intiTemplateFld.clone().show();
+            clone.find(".wbdv-username").html(users[u].username);
+            clone.find(".wbdv-password").html('&#8226;&#8226;&#8226;&#8226;&#8226;'
+                                              + '&#8226;');
+            clone.find(".wbdv-first-name").html(users[u].firstName);
+            clone.find(".wbdv-last-name").html(users[u].lastName);
+            clone.find(".wbdv-role").html(role);
+            $tbody.append(clone).show();
+
+        }
+
     }
 
 })();
