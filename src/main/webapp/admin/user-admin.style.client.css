@@ -1,0 +1,30 @@
+body{
+    background: white;
+}
+
+#headerFld{
+    color: white;
+    align-content: center;
+
+}
+
+#headerFontFld{
+    align-content: center;
+    text-align: center;
+}
+
+.wbdv-form{
+    background: #808080;
+}
+
+#searchBtnFld{
+     color: white;
+ }
+
+#createBtnFld{
+    color: white;
+}
+
+#updateBtnFld{
+    color: white;
+}
