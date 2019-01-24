@@ -253,7 +253,7 @@
             .then(function (userPromiseData) {
                 console.log(userPromiseData);
                 $tbody.empty();
-                searchRenderUsers(userPromiseData);
+                renderUsers(userPromiseData);
                 });
 
     }
