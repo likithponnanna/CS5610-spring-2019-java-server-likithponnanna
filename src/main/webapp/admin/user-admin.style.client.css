@@ -18,13 +18,47 @@ body{
 }
 
 #searchBtnFld{
-     color: white;
+     color: deepskyblue;
+    border-style: groove;
+    background: white;
+    border-radius: 15px;
+    align-content: center;
+    padding: 2px;
  }
 
 #createBtnFld{
-    color: white;
+    color: #634780;
+    border-style: ridge;
+    background: white;
+    border-radius: 15px;
+    align-content: center;
+    padding: 2px;
 }
 
 #updateBtnFld{
-    color: white;
+    color: #3f802f;
+    border-style: groove;
+    background: white;
+    border-radius: 15px;
+    align-content: center;
+    ppadding: 2px;
+}
+
+
+.fa-times{
+    color: #80242b;
+    border-style: groove;
+    background: white;
+    border-radius: 10px;
+    align-content: center;
+    padding: 2px;
+}
+
+.fa-pencil{
+    color: #476d80;
+    border-style: ridge;
+    background: white;
+    border-radius: 10px;
+    align-content: center;
+    padding: 2px;
 }

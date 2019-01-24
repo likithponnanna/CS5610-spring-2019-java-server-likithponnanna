@@ -6,7 +6,7 @@
     var $intiTemplateFld;
     var $wbdvrmtrFld;
     var username, password, firstName, lastName, role;
-    var  $updateBtnFld, userIdTem=null;
+    var  $updateBtnFld, userIdTem=null, clickedUser;
     var userService = new AdminUserServiceClient();
     $(main);
 
@@ -107,6 +107,7 @@
     function selectUser() {  }
 
     function updateUser() {
+        var flagN=0;
         if(userIdTem!==0) {
             username = $usernameFld.val();
             password = $passwordFld.val();
@@ -115,27 +116,45 @@
             role = $roleFld.val();
 
 
-            var user = new User(username,password,firstName,lastName,role);
-
-
-           var userId = userIdTem;
 
             userService
-                .updateUser(userId,user)
-                .then(renderUsers);
+                .findAllUsers()
+                .then(function(userPromiseData) {
+                    console.log(userPromiseData);
+                    for (var u=0;u< userPromiseData.length; u++) {
+                        if(userPromiseData[u].userId != userIdTem
+                           &&  userPromiseData[u].username === username ){
+                            alert('Username already exists');
+                            flagN=1;
+                        }
+                    }
 
-            $('.wbdv-rm-row-'+userId).find('.wbdv-username').text(username);
-            $('.wbdv-rm-row-'+userId).find('.wbdv-password').text('••••••');
-            $('.wbdv-rm-row-'+userId).find('.wbdv-first-name').text(firstName);
-            $('.wbdv-rm-row-'+userId).find('.wbdv-last-name').text(lastName);
-            $('.wbdv-rm-row-'+userId).find('.wbdv-role').text(role);
+                    if(flagN !== 1) {
+                        var user = new User(username,password,firstName,lastName,role);
+                        var userId = userIdTem;
 
-            $usernameFld.val('');
-            $passwordFld.val('');
-            $firstNameFld.val('');
-            $lastNameFld.val('');
+                        userService
+                            .updateUser(userId,user)
+                            .then(renderUsers);
 
-            userIdTem=null;
+                        $('.wbdv-rm-row-'+userId).find('.wbdv-username').text(username);
+                        $('.wbdv-rm-row-'+userId).find('.wbdv-password').text('••••••');
+                        $('.wbdv-rm-row-'+userId).find('.wbdv-first-name').text(firstName);
+                        $('.wbdv-rm-row-'+userId).find('.wbdv-last-name').text(lastName);
+                        $('.wbdv-rm-row-'+userId).find('.wbdv-role').text(role);
+
+                        $usernameFld.val('');
+                        $passwordFld.val('');
+                        $firstNameFld.val('');
+                        $lastNameFld.val('');
+
+                        userIdTem=null;
+                    }
+
+                });
+
+
+
 
 
         }else {
@@ -163,10 +182,14 @@
 
         userIdTem=userId;
 
+        clickedUser =  $usernameFld.val();
+
         $usernameFld.val('');
         $passwordFld.val('');
         $firstNameFld.val('');
         $lastNameFld.val('');
+
+
 
     }
 
@@ -212,7 +235,43 @@
     }
 
     function searchUsers() {
-       
+        username = $usernameFld.val();
+        password = $passwordFld.val();
+        firstName = $firstNameFld.val();
+        lastName = $lastNameFld.val();
+
+        role =$("#roleFld option:selected").val();
+        if(role === null){
+            role="";
+        }
+        console.log(role);
+
+        var user = new User(username,password,firstName,lastName,role);
+
+        userService
+            .searchUsers(user)
+            .then(function (userPromiseData) {
+                console.log(userPromiseData);
+                $tbody.empty();
+                searchRenderUsers(userPromiseData);
+                });
+
+    }
+
+    function searchRenderUsers(users) {
+        console.log(users)
+        for( var u=0; u < users.length; u++){
+            var clone = $intiTemplateFld.clone().show();
+            clone.find(".wbdv-username").html(users[u].username);
+            clone.find(".wbdv-password").html('&#8226;&#8226;&#8226;&#8226;&#8226;'
+                                              + '&#8226;');
+            clone.find(".wbdv-first-name").html(users[u].firstName);
+            clone.find(".wbdv-last-name").html(users[u].lastName);
+            clone.find(".wbdv-role").html(role);
+            $tbody.append(clone).show();
+
+        }
+
     }
 
 })();
