@@ -259,7 +259,6 @@
     }
 
     function searchRenderUsers(users) {
-        console.log(users)
         for( var u=0; u < users.length; u++){
             var clone = $intiTemplateFld.clone().show();
             clone.find(".wbdv-username").html(users[u].username);
@@ -268,8 +267,8 @@
             clone.find(".wbdv-first-name").html(users[u].firstName);
             clone.find(".wbdv-last-name").html(users[u].lastName);
             clone.find(".wbdv-role").html(role);
-            clone.find(".wbdv-remove").attr("id","wbdv-rm-"+ userId);
-            clone.find(".wbdv-edit").attr("id","wbdv-ed-"+userId);
+            clone.find(".wbdv-remove").attr("id","wbdv-rm-"+ users[u].userId);
+            clone.find(".wbdv-edit").attr("id","wbdv-ed-"+users[u].userId);
             $tbody.append(clone).show();
 
         }
