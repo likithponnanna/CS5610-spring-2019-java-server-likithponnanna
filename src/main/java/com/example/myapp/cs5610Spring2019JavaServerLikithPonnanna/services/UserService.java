@@ -17,8 +17,8 @@ import java.util.Collections;
 @RestController
 public class UserService {
 
-  private User alice = new User(123, "alice","pass123", "Alice", "Wonderland","FACULTY");
-  private User bob = new User(234, "bob","pass245", "Bob", "Marley","STUDENT");
+  private User alice = new User((long) 123, "alice","pass123", "Alice", "Wonderland","FACULTY");
+  private User bob = new User((long) 234, "bob","pass245", "Bob", "Marley","STUDENT");
   private ArrayList<User> users = new ArrayList <>(Arrays.asList(alice,bob));
 
   @GetMapping("/api/user")
@@ -36,7 +36,7 @@ public class UserService {
     return null;
   }
 
-  @PostMapping("/api/user/")
+  @PostMapping("/api/user")
   public User createUser(@RequestBody User user){
     users.add(user);
     return user;

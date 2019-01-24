@@ -1,7 +1,7 @@
 package com.example.myapp.cs5610Spring2019JavaServerLikithPonnanna.model;
 
 public class User{
-  private Integer userId;
+  private Long userId;
   private String username;
   private String password;
   private String firstName;
@@ -11,7 +11,7 @@ public class User{
   public User(){
 
   }
-  public User(int userId, String username,String password, String firstName, String lastName, String role) {
+  public User(Long userId, String username,String password, String firstName, String lastName, String role) {
     this.userId = userId;
     this.username = username;
     this.firstName = firstName;
@@ -20,11 +20,11 @@ public class User{
     this.role =role;
   }
 
-  public Integer getUserId() {
+  public Long getUserId() {
     return userId;
   }
 
-  public void setUserId(Integer userId) {
+  public void setUserId(Long userId) {
     this.userId = userId;
   }
 
