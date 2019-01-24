@@ -73,6 +73,9 @@ public class User{
   }
 
   public String getRole() {
+    if(role==null){
+      role ="";
+    }
     return role;
   }
 

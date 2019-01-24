@@ -32,15 +32,10 @@
         $(document).on("click",".wbdv-remove",deleteUser);
         $(document).on("click",".wbdv-edit",editUser);
         $(document).on("click","#updateBtnFld",updateUser);
-
-
-       /* $(document).on("click","#updateBtnFld",(function() {
-            alert('No user chosen for update!! Click on the edit button of the user info to '
-                  + 'be updated');
-        }));*/
-
+        $(document).on("click","#searchBtnFld",searchUsers);
     }
     function createUser() {
+        var flag=0;
         if($usernameFld.val() !== "" && $passwordFld.val() !== "" && $passwordFld.val()!== ""
         && $firstNameFld.val()!== "" &&  $lastNameFld.val()!=="" && $roleFld.val()!=="") {
             username = $usernameFld.val();
@@ -52,27 +47,50 @@
             alert("Input all the fields");
         }
 
-        var user = new User(username,password,firstName,lastName,role);
-
         userService
-            .createUser(user)
-            .then(renderUsers);
+            .findAllUsers()
+            .then(function(userPromiseData) {
+                console.log(userPromiseData);
+                for (var u=0;u< userPromiseData.length; u++) {
+                    if(userPromiseData[u].username === username){
+                        alert('Username already exists');
+                        flag=1;
+                    }
+                }
 
-        supportFun(user);
+                if(flag !== 1) {
+                    var user = new User(username, password, firstName, lastName, role);
+
+                    userService
+                        .createUser(user)
+                        .then(renderUsers);
+
+                    supportFun(user);
+
+                    $usernameFld.val('');
+                    $passwordFld.val('');
+                    $firstNameFld.val('');
+                    $lastNameFld.val('');
+                }
+
+            });
+
 
     }
 
-    function findAllUsers() {  }
+    function findAllUsers() {
+        userService
+            .findAllUsers()
+            .then(renderUsers);
+    }
 
     function findUserById(userId) {
-        var userRetrieved;
         userService
             .findUserById(userId).then(function (userPromiseData) {
-            console.log(userPromiseData) });
-
-
+            console.log(userPromiseData) }).then(renderUsers);
 
     }
+
     function deleteUser() {
         var userId = event.target.id;
         userId = userId.replace("wbdv-rm-","");
@@ -85,6 +103,7 @@
 
 
     }
+
     function selectUser() {  }
 
     function updateUser() {
@@ -95,10 +114,9 @@
             lastName = $lastNameFld.val();
             role = $roleFld.val();
 
-            console.log(username+password+firstName+lastName+role);
 
             var user = new User(username,password,firstName,lastName,role);
-           console.log(userIdTem);
+
 
            var userId = userIdTem;
 
@@ -116,7 +134,6 @@
             $passwordFld.val('');
             $firstNameFld.val('');
             $lastNameFld.val('');
-            $roleFld.val('');
 
             userIdTem=null;
 
@@ -146,9 +163,15 @@
 
         userIdTem=userId;
 
+        $usernameFld.val('');
+        $passwordFld.val('');
+        $firstNameFld.val('');
+        $lastNameFld.val('');
+
     }
 
     function renderUser(user) {  }
+
     function renderUsers(users) {
         for( var u=0; u < users.length; u++){
             var clone = $intiTemplateFld.clone();
@@ -158,6 +181,8 @@
                                                            + '&#8226;');
             clone.find(".wbdv-first-name").html(users[u].firstName);
             clone.find(".wbdv-last-name").html(users[u].lastName);
+
+            clone.find(".wbdv-role").html(users[u].role);
             clone.find(".wbdv-remove").attr("id","wbdv-rm-"+users[u].userId);
             clone.find(".wbdv-edit").attr("id","wbdv-ed-"+users[u].userId);
             $tbody.append(clone).show();
@@ -179,11 +204,15 @@
                                           + '&#8226;');
         clone.find(".wbdv-first-name").html(firstName);
         clone.find(".wbdv-last-name").html(lastName);
+        clone.find(".wbdv-role").html(role);
         clone.find(".wbdv-remove").attr("id","wbdv-rm-"+ userId);
         clone.find(".wbdv-edit").attr("id","wbdv-ed-"+userId);
         $tbody.append(clone).show();
 
     }
 
+    function searchUsers() {
+       
+    }
 
 })();

@@ -5,7 +5,9 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
-    this.url = 'http://localhost:8080/api/user';
+    this.searchUsers = searchUsers;
+
+    this.url = '/api/user';
     var self = this;
     function createUser(user) {
             return fetch(this.url, {
@@ -53,6 +55,24 @@ function AdminUserServiceClient() {
     function deleteUser(userId) {
         return fetch('/api/delete/'+userId,{
                 method: 'DELETE'
+            })
+    }
+
+    function searchUsers(user) {
+        return fetch('/api/user/search',{
+            method: 'POST',
+            body: JSON.stringify({userId: user.getUserId().toString()
+                                     , username: user.getUsername().toString()
+                                     , password: user.getPassword().toString()
+                                     ,firstName: user.getFirstName().toString()
+                                     ,lastName: user.getLastName().toString()
+                                     , role: user.getRole().toString()}),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(function (response) {
+                return response.json();
             })
     }
 }
